@@ -5,15 +5,11 @@ LABEL "nginx"="1.19.2"
 
 RUN  apt-get update || apt-get install -y htop 
 
-CMD echo "This is a test"
-
 EXPOSE 8080/tcp 
 
 COPY index.html  /usr/share/nginx/html/
 
 WORKDIR /usr/share/nginx/html 
-
-CMD cat /usr/share/nginx/html/index.html 
 
 HEALTHCHECK  --interval=5m  --timeout=15s \
 CMD curl -f http://localhost/ || exit 1
