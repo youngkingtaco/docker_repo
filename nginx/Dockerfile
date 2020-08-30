@@ -11,7 +11,6 @@ COPY index.html  /usr/share/nginx/html/
 
 WORKDIR /usr/share/nginx/html 
 
+
 HEALTHCHECK  --interval=5m  --timeout=15s \
 CMD curl -f http://localhost/ || exit 1
-
-
