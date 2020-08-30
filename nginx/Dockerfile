@@ -1,7 +1,7 @@
 FROM nginx:1.19.2
 
 LABEL "Contact Info"="rodri.ocalderone97@icloud.com"
-LABEL "nginx=1.19.2"
+LABEL "nginx"="1.19.2"
 
 RUN  apt-get update || apt-get install  -y ping 
 
