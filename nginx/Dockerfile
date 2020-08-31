@@ -1,7 +1,6 @@
 FROM nginx:1.19.2
 
-LABEL "Contact Info"="rodri.ocalderone97@icloud.com"
-LABEL "nginx"="1.19.2"
+MAINTAINER Hugo Calderon rodri_ocalderon97@icloud.com
 
 RUN  apt-get update \
      && apt-get install -y htop \
