@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENTRYPOINT ["sleep"]
+
+ENTRYPOINT echo hello; sleep infinity
 
 
-CMD ["5"]
