@@ -1,5 +1,9 @@
 FROM centos:latest
 
-ENV name Cristiano Ronaldo
+MAINTAINER hugo calderon rodri_ocalderon97@icloud.com
+RUN yum update -y && \
+    yum install -y vim 
 
-ENTRYPOINT ["echo", "Hello, $name"]
+COPY passwd.text / 
+
+CMD ["cat","passwd.text"]
