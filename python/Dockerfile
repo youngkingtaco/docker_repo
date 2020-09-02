@@ -1,5 +1,6 @@
 FROM python:3 
-MAINTAINER Hugo Calderon  rodri.ocalderone97@icloud.com 
+
+MAINTAINER Hugothesnapper  rodri.ocalderone97@icloud.com 
 
 RUN pip install pystrich 
 
