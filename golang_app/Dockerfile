@@ -1,11 +1,12 @@
 FROM golang:1.12-alpine AS builder 
 
-RUN apk add --nocache git 
+RUN apk add --no-cache git 
 
 WORKDIR /tmp/go-sample-app 
 
-COPY go.mod . && \ 
-     go.sum . 
+COPY go.mod . 
+
+COPY go.sum . 
 
 RUN go mod download 
 
