@@ -14,6 +14,6 @@ RUN apk --no-cache add ca-certificates
 
 WORKDIR /root/ 
 
-COPY --from=builder  /go/src/app/xhcalderonep   .
+COPY --from=builder  /go/src/app/xhcalderone  .
 
 CMD ["./app"]
