@@ -1,4 +1,4 @@
-FROM python:19.03 
+FROM python:3.5.9-alpine3.11 
 
 WORKDIR /usr/hugo_bin/ 
 
