@@ -3,8 +3,8 @@ version: '3'
 services:
   webapp:
     build:
-    context: ./telukso
-    dockerfile: Dockerfile_test
+      context: .
+      dockerfile: Dockerfile_test
     command: python manage.py runserver 0.0.0.0:8181
     ports:
       - 8181:9000
