@@ -8,5 +8,17 @@ services:
       - "8080:80"
     volumes:
       - ./websites:/usr/share/nginx/html  
-
+    depends_on:
+      - deb
+    links:
+      - db  
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=dsajdsdafa
+    restart: always
+    volumes:
+      - db_vol:/var/lib/mysql
+volumes:
+  db_vol:
 
