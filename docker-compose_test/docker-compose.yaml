@@ -1,24 +1,20 @@
-version: "3"
-
-services:
-  web_image:
-    image: nginx:latest
-    restart: always
+version: '3'
+services: 
+  nginx:
+    image:  nginx:latest
     ports:
-      - "8080:80"
+      - "8383:80"
     volumes:
-      - ./websites:/usr/share/nginx/html  
-    depends_on:
-      - db
-    links:
-      - db  
-  db:
-    image: mysql:latest
+      - ./data1:/usr/share/nginx/html
+  mydb_service:
+    image:  postgres:latest
     environment:
-      - MYSQL_ROOT_PASSWORD=dsajdsdafa
-    restart: always
+       POSTGRES_PASSWORD: sdadfasfasffs 
+       POSTGRES_USER: postgres 
+       POSTGRES_DB: postgres 
     volumes:
-      - db_vol:/var/lib/mysql
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 volumes:
-  db_vol:
-
+  db-data:

@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  web_image:
+    image: nginx:latest
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./websites:/usr/share/nginx/html  
+    depends_on:
+      - db
+    links:
+      - db  
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=dsajdsdafa
+    restart: always
+    volumes:
+      - db_vol:/var/lib/mysql
+volumes:
+  db_vol:
+
