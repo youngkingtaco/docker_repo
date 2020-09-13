@@ -6,8 +6,6 @@ services:
       - "8383:80"
     volumes:
       - ./data1:/usr/share/nginx/html
-<<<<<<< HEAD
-=======
   mydb_service:
     image:  postgres:latest
     environment:
@@ -19,7 +17,4 @@ services:
     ports:
       - "5432:5432"
 volumes:
-db-data:        
-
-
->>>>>>> 7d6a79857252270473b88494fa3dab884d2edef2
+db-data:
