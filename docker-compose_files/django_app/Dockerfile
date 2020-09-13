@@ -1,6 +1,8 @@
-FROM python:3.7-alpine 
+FROM python:3.8-alpine 
 
 MAINTAINER rodri.ocalderone97@icloud.com  Hugo Calderon 
+
+ENV PATH="/scripts:${PATH}"
 
 RUN apk add --update --no-cache --virtual .tmp gcc libc-dev linux-headers 
 
@@ -10,11 +12,11 @@ RUN pip install -r /requirements.txt
 
 RUN apk del .tmp 
 
-WORKDIR /app 
+RUN mkdir /app 
 
 COPY ./myapp /app
 
-WORKDIR /scripts
+WORKDIR /app
 
 COPY ./scripts /scripts 
 
@@ -31,5 +33,9 @@ RUN chown -R user:user /vol
 RUN chmod -R 755 /vol/web
 
 USER  user
+
+WORKDIR /myapp
+
+RUN chmod +x manage.py
 
 CMD ["entrypoint.sh"]
