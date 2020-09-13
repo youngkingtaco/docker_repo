@@ -6,3 +6,17 @@ services:
       - "8383:80"
     volumes:
       - ./data1:/usr/share/nginx/html
+  mydb_service:
+    image:  postgres:latest
+    environment:
+      - POSTGRES_PASSWORD: example
+      - POSTGRES_USER: postgres 
+      - POSTGRES_DB: postgres 
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+db-data:        
+
+
