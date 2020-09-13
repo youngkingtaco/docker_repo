@@ -12,7 +12,7 @@ RUN apk del .tmp
 
 WORKDIR /app 
 
-COPY ./app /app
+COPY ./myapp /app
 
 WORKDIR /scripts
 
