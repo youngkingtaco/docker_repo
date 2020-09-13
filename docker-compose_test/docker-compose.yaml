@@ -9,7 +9,7 @@ services:
     volumes:
       - ./websites:/usr/share/nginx/html  
     depends_on:
-      - deb
+      - db
     links:
       - db  
   db:
